@@ -1,0 +1,390 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    position: relative;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    font-weight: 300;
+}
+
+/* 管理员按钮 */
+.admin-btn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-btn:hover {
+    background: #e8e8e8;
+}
+
+/* 管理员面板 */
+.admin-panel {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.admin-panel input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.admin-panel button {
+    padding: 8px 16px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-panel button:hover {
+    background: #555;
+}
+
+/* 博客容器 */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* 列样式 */
+.column {
+    min-height: 200px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.column-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.column h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* 添加按钮和删除按钮 */
+.add-btn, .delete-all-btn {
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.add-btn {
+    font-size: 18px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.add-btn:hover {
+    background: #e0e0e0;
+}
+
+.delete-all-btn {
+    background: #ffeaea;
+    border-color: #ffcdd2;
+    color: #d32f2f;
+}
+
+.delete-all-btn:hover {
+    background: #ffcdd2;
+}
+
+/* 文章样式 */
+.post {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.post:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.post h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.post-actions {
+    display: none;
+    gap: 5px;
+}
+
+.post:hover .post-actions {
+    display: flex;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #e0e0e0;
+}
+
+.edit-btn:hover { color: #007acc; }
+.delete-btn:hover { color: #d73a49; }
+
+.post-meta {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.post-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    white-space: pre-wrap;
+}
+
+/* 弹窗样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#modalTitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal input, .modal textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-family: inherit;
+}
+
+.modal textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.form-buttons {
+    text-align: right;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-buttons button[type="submit"] {
+    background: #333;
+    color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background: #555;
+}
+
+.form-buttons button[type="button"] {
+    background: #f8f8f8;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.form-buttons button[type="button"]:hover {
+    background: #e8e8e8;
+}
+
+/* 底部 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #eee;
+}
+
+/* 保存指示器 */
+.save-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1001;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 工具类 */
+.hidden {
+    display: none !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .admin-btn {
+        position: static;
+        margin-top: 10px;
+    }
+}
